@@ -1,5 +1,3 @@
-# Conversor de Imagem para Áudio
-
 Este projeto é um aplicativo web que permite aos usuários fazer upload de uma imagem, extrair texto da imagem usando OCR (Optical Character Recognition) e converter o texto extraído em áudio usando a tecnologia de conversão de texto em fala (TTS).
 
 
@@ -23,18 +21,18 @@ Este projeto é um aplicativo web que permite aos usuários fazer upload de uma 
 
 1. Clone o repositório e navegue até o diretório do projeto:
     ```sh
-    git clone https://github.com/yourusername/image-to-audio-converter.git
-    cd image-to-audio-converter
+    git clone https://github.com/gu1lh3rm3s0rd1/conversor-de-texto.git
+    cd conversor-de-texto
     ```
 
-   1. Crie um ambiente virtual:
+2. Crie um ambiente virtual:
     ```sh
     python -m venv venv
     venv\Scripts\activate  # Windows
     source venv/bin/activate  # Unix ou MacOS
     ```
 
-2. Instale as dependências do projeto:
+3. Instale as dependências do projeto:
     ```sh
     pip install -r requirements.txt
     ```
@@ -49,7 +47,7 @@ Este projeto é um aplicativo web que permite aos usuários fazer upload de uma 
 
 2. Num segundo terminal, inicie o app do Streamlit:
     ```sh
-    streamlit run streamlit_app.py
+    streamlit run main.py
     ```
     O serviço vai estar disponível em `http://localhost:8501`.
 
@@ -58,7 +56,7 @@ Este projeto é um aplicativo web que permite aos usuários fazer upload de uma 
 
 1. Abra seu navegador e vá para `http://localhost:8501` para acessar o aplicativo Streamlit.
 2. Carregue um arquivo de imagem.
-3. O aplicativo irá processar a imagem, extrair o texto, convertê-lo em áudio e disponibilizar um reprodutor de áudio para ouvir o áudio gerado.
+3. O aplicativo irá processar a imagem, extrair o texto, convertê-lo em áudio e disponibilizar um player para ser reproduzido.
 
 
 # Tecnologias Utilizadas
