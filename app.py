@@ -24,28 +24,30 @@ def upload_file():
     if 'file' not in request.files:
         return jsonify({'error': 'Nenhum arquivo carregado.'}), 400
     file = request.files['file']
-    if file.arquivo == '':
+    if file.filename == '':
         return jsonify({'error': 'Nenhum arquivo selecionado.'}), 400
     if file:
-        arquivo = file.arquivo
-        filepath = os.path.join(app.config['UPLOAD_FOLDER'], arquivo)
+        filename = file.filename
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
-
+        
+        # converte a imagem em texto
         img = cv2.imread(filepath)
         text = pytesseract.image_to_string(img)
 
+        # converte o texto em áudio 
         tts = gTTS(text)
-        arquivo_audio = arquivo + '.mp3'
-        audio_path = os.path.join(app.config['AUDIO_FOLDER'], arquivo_audio)
+        audio_filename = filename + '.mp3'
+        audio_path = os.path.join(app.config['AUDIO_FOLDER'], audio_filename)
         tts.save(audio_path)
 
-        return jsonify({'audio_url': url_for('uploaded_file', arquivo=arquivo_audio, _external=True)})
+        return jsonify({'audio_url': url_for('uploaded_file', filename=audio_filename, _external=True)})
 
 
 # rota para servir o arquivo de áudio
-@app.route('/audio/<arquivo>')
-def uploaded_file(arquivo):
-    return send_from_directory(app.config['AUDIO_FOLDER'], arquivo)
+@app.route('/audio/<filename>')
+def uploaded_file(filename):
+    return send_from_directory(app.config['AUDIO_FOLDER'], filename)
 
 
 if __name__ == '__main__':
