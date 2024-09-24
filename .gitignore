@@ -1,7 +1,7 @@
 rascunho.txt
 output.mp3
 __pycache__/
-audio/
 outputs/
-uploads/
 venv/
+uploads/
+audio/

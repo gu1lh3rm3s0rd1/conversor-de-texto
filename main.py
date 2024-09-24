@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 
+
+# para rodar com o outro ip basta trocar o ip 
 API_URL = "http://127.0.0.1:5000/upload"
 
 st.title('Conversor de Imagem para Áudio')
