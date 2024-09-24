@@ -1,5 +1,3 @@
-# Conversor de Imagem para Áudio
-
 Este projeto é um aplicativo web que permite aos usuários fazer upload de uma imagem, extrair texto da imagem usando OCR (Optical Character Recognition) e converter o texto extraído em áudio usando a tecnologia de conversão de texto em fala (TTS).
 
 
@@ -27,14 +25,14 @@ Este projeto é um aplicativo web que permite aos usuários fazer upload de uma 
     cd image-to-audio-converter
     ```
 
-   1. Crie um ambiente virtual:
+2. Crie um ambiente virtual:
     ```sh
     python -m venv venv
     venv\Scripts\activate  # Windows
     source venv/bin/activate  # Unix ou MacOS
     ```
 
-2. Instale as dependências do projeto:
+3. Instale as dependências do projeto:
     ```sh
     pip install -r requirements.txt
     ```
